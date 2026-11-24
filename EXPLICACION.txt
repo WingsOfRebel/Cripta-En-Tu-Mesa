@@ -1,0 +1,49 @@
+LA CRIPTA EN TU MESA - Explicación de cómo se hizo la actividad
+Edwin Jesús Flete Cruz - 1-22-1805 - Programación de Video Juegos (INF-910-001)
+
+1. Idea
+La actividad pedía un juego o espacio con realidad virtual o aumentada. Elegí realidad aumentada
+porque se puede probar con cualquier celular Android, sin lentes especiales. El profesor indicó
+que bastaba con un escenario y un personaje haciendo algo, así que hice una cripta en miniatura
+que aparece sobre la mesa, con un esqueleto que sale de la tierra y baila. Usé los esqueletos de
+KayKit, los mismos del FPS anterior, para mantener el estilo, pero con una idea distinta.
+
+2. Por qué Vuforia
+Vuforia es una de las herramientas de realidad aumentada más usadas con Unity y era parte de la
+investigación. Trabaja con marcadores (Image Targets): una imagen que la cámara reconoce para saber
+dónde poner los objetos 3D. Funciona en muchos celulares, y en Unity se puede probar con la webcam
+de la computadora.
+
+3. El marcador
+Hice mi propia imagen de marcador con una lápida, mi nombre y muchas figuras de colores. Vuforia
+reconoce mejor las imágenes con muchas esquinas, buen contraste y sin patrones repetidos, por eso
+tiene tantas figuras. En lugar de subirla a la base de datos de Vuforia, el marcador se crea desde
+el código al iniciar (CreateImageTarget), indicando que mide 20 cm de ancho.
+
+4. El escenario
+La cripta está hecha con piezas de KayKit Dungeon: piso de losas y tierra, un muro, columnas,
+velas con luz, un cofre con oro, barriles y escombros. Todo se arma en metros y luego se encoge
+(escala 0.03) para que mida unos 24 cm sobre la mesa.
+
+5. Lo que hace el esqueleto
+- Al ver el marcador, el esqueleto sale de la tierra y provoca al jugador.
+- BAILAR: suena la música, dos esbirros salen de la tierra y los tres bailan una coreografía
+  (animar, saltar, provocar, saludar, lagartijas).
+- SALUDAR: saluda con la mano.
+- DORMIR / DESPERTAR: se derrumba en el piso y después revive.
+- Si lo tocas en la pantalla, se queja.
+Las animaciones vienen de KayKit Character Animations. Cada movimiento dura lo que dura su
+animación, y un script los encadena.
+
+6. Detalles
+- Cuando la cámara pierde el marcador, se ocultan los modelos pero las animaciones siguen, para que
+  el show no empiece de nuevo.
+- El nombre y la matrícula están arriba a la derecha, como pide la tarea.
+- La música y los efectos los generé por código, igual que en los juegos anteriores.
+- Hice una herramienta del editor (AR > Construir todo) que crea los materiales, las animaciones,
+  el escenario, la escena y los ajustes de Android, para poder regenerarlo todo sin errores.
+- Agregué un modo de prueba (tecla P) para ver la cripta en la PC sin el marcador.
+
+7. Publicación
+El código está en GitHub y la compilación final es un APK para Android, publicado en la sección
+Releases del repositorio.

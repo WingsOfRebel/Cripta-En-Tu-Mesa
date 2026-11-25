@@ -14,7 +14,7 @@ Al apuntar la cámara del celular al marcador, aparece sobre la mesa una pequeñ
 
 ## Descargar y probar
 
-1. Descarga el **APK** desde la sección **Releases** de este repositorio e instálalo en un celular Android (8.0 o superior).
+1. Descarga el **APK** desde la sección **Releases** de este repositorio e instálalo en un celular Android (10 o superior).
 2. Abre `Assets/Resources/Marcador.png` en otra pantalla o imprímelo (unos 20 cm de ancho).
 3. Abre la app, acepta el permiso de la cámara y apunta al marcador.
 

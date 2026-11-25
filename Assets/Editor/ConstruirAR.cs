@@ -368,11 +368,11 @@ public static class ConstruirAR
         PlayerSettings.SetApplicationIdentifier(android, "com.wingsofrebel.criptaentumesa");
         PlayerSettings.SetScriptingBackend(android, ScriptingImplementation.IL2CPP);
         PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
-        PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel26;
+        PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel29;   // Vuforia pide Android 10 o superior
         PlayerSettings.Android.applicationEntry = AndroidApplicationEntry.Activity;
         PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.Android, false);
         PlayerSettings.SetGraphicsAPIs(BuildTarget.Android, new[] { GraphicsDeviceType.OpenGLES3 });
         PlayerSettings.defaultInterfaceOrientation = UIOrientation.LandscapeLeft;
-        Log("Android: IL2CPP, ARM64, Android 8.0+, OpenGL ES 3, horizontal");
+        Log("Android: IL2CPP, ARM64, Android 10+, OpenGL ES 3, horizontal");
     }
 }
